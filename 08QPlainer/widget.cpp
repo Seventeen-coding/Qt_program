@@ -42,7 +42,7 @@ void Widget::paintEvent(QPaintEvent *)
     QColor minuteColor(0, 127, 127, 191);
 
     //qMin-> width 比较大小 height 返回最小值
-    int side = qMin(width(), height());
+    int side = qMin(width(), height());             //为了保持缩放时候图像是圆的
     QTime time = QTime::currentTime();
 
 
@@ -96,7 +96,10 @@ void Widget::paintEvent(QPaintEvent *)
 
     painter.save();                                 //因为下一次分针做准备
     painter.rotate(6.0 *  time.second());
+    qDebug() << 6.0 *  time.second();
+   // painter.drawLine(QPoint(0,7),QPoint(0,-70));
     painter.drawLine(QPoint(0,7),QPoint(0,-70));
+
     painter.restore();
 
 

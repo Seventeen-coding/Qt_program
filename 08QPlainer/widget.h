@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QTime>
 #include <QPainter>
+#include <QDebug>
 namespace Ui {
 class Widget;
 }
