@@ -52,7 +52,10 @@ void Widget::paintEvent(QPaintEvent *)
     painter.translate(width() / 2, height() / 2);  //?
     painter.scale(side / 200.0, side / 200.0);     //按比例放大缩小
     painter.setPen(Qt::NoPen);                     //不用笔画边框
-    painter.setBrush(hourColor);                   //刷子填充
+    painter.setBrush(QBrush(hourColor,Qt::Dense1Pattern));                   //刷子填充
+//    QLinearGradient linearGradient(60, 50, 200, 200);
+//    painter.setBrush(QBrush(linearGradient));
+
 
 
     painter.save();                                 //因为下一次分针做准备
